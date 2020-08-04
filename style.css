@@ -1,0 +1,15 @@
+
+body {
+font-family: Comic Sans MS;
+background-color: black;
+color: white;
+}
+
+button {
+outline: none;
+font-family: Comic Sans MS;
+background-color: black;
+border-color: white;
+color: white;
+cursor: pointer;
+}

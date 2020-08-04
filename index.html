@@ -1,0 +1,17 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>the softcap experiment (softcapped)</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="OmegaNum.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="mousetrap.js"></script>
+  </head>  
+  <body><div id="game">you have ${{ game.money }} <div v-if="game.power3.gt(1)">and x{{ game.power3.mul(1000).round().div(1000) }} mult</div><br>
+  <button onclick="getmoney()">get money {{ game.money.gte(1000) ? "(scaled^" + game.softcap + ")" : game.softcap.gte(2) ? "(softcapped^" + game.softcap + ")" : game.softcap.gte(1) ? "(softcapped)" : ""}}</button><br>
+  <button onclick="upgrade()">reset but decrease softcap effect for ${{ game.upgcosts[game.upgradeon] }} {{game.softcap2.gte(2) ? "(softcapped^" + game.softcap2 + ")" : game.softcap2.gte(1) ? "(softcapped)" : ""}}</button>
+  <button onclick="prestige()" v-if="game.money.gte(7.9)">reset^2 but increase money gain strength and make reset^1 SLIGHTLY worse for ${{ game.prestigecosts[game.prestigeon] }}</button></div></body>
